@@ -95,8 +95,15 @@
         };
         QHScrollUpDownView *scroller = [[QHScrollUpDownView alloc] initWithFrame:CGRectMake(70, 0, ws.midView1.frame.size.width - 70, 60) titles:titles];
         [self.midView1 addSubview:scroller];
-        scroller.titleClick = ^(NSInteger title) {
-            NSLog(@"%ld", title);
+        scroller.titleClick = ^(NSString *title) {
+            Mid1ViewController *mid1VC = [Mid1ViewController new];
+            for (ArticleModel *model in _mid1TableViewDatasource) {
+                if ([model.title isEqualToString:title]) {
+                    mid1VC.model = model;
+                    break;
+                }
+            }
+            [self.navigationController pushViewController:mid1VC animated:YES];
         };
         ws.ClinincModelArray = [NSMutableArray arrayWithArray:responseObject[@"clinincArray"]];
         [ws.dennyScrollview getDennyImageArray:responseObject[@"bannerImageArray"]];

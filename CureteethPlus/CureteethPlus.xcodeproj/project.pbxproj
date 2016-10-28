@@ -47,8 +47,6 @@
 		B07DD3D21D40C18A00FCBA6C /* MidViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B07DD3D01D40C18A00FCBA6C /* MidViewController.xib */; };
 		B07DD3D51D40C37600FCBA6C /* ClassifyReq.m in Sources */ = {isa = PBXBuildFile; fileRef = B07DD3D41D40C37600FCBA6C /* ClassifyReq.m */; };
 		B08B51D21D79245400FBD3D7 /* MapSearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = B08B51D11D79245400FBD3D7 /* MapSearchResultView.m */; };
-		B092562B1D3BA363002E9BCB /* Mid1ViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B09256291D3BA363002E9BCB /* Mid1ViewTableViewCell.m */; };
-		B092562C1D3BA363002E9BCB /* Mid1ViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B092562A1D3BA363002E9BCB /* Mid1ViewTableViewCell.xib */; };
 		B09256321D3BD10B002E9BCB /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = B09256311D3BD10B002E9BCB /* SearchResultView.m */; };
 		B09256371D3BDBCB002E9BCB /* SarchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09256351D3BDBCB002E9BCB /* SarchResultViewController.m */; };
 		B09256381D3BDBCB002E9BCB /* SarchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B09256361D3BDBCB002E9BCB /* SarchResultViewController.xib */; };
@@ -263,9 +261,6 @@
 		B07DD3D41D40C37600FCBA6C /* ClassifyReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassifyReq.m; sourceTree = "<group>"; };
 		B08B51D01D79245400FBD3D7 /* MapSearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSearchResultView.h; sourceTree = "<group>"; };
 		B08B51D11D79245400FBD3D7 /* MapSearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSearchResultView.m; sourceTree = "<group>"; };
-		B09256281D3BA363002E9BCB /* Mid1ViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mid1ViewTableViewCell.h; sourceTree = "<group>"; };
-		B09256291D3BA363002E9BCB /* Mid1ViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mid1ViewTableViewCell.m; sourceTree = "<group>"; };
-		B092562A1D3BA363002E9BCB /* Mid1ViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Mid1ViewTableViewCell.xib; sourceTree = "<group>"; };
 		B09256301D3BD10B002E9BCB /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
 		B09256311D3BD10B002E9BCB /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
 		B09256341D3BDBCB002E9BCB /* SarchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SarchResultViewController.h; sourceTree = "<group>"; };
@@ -1049,9 +1044,6 @@
 				B0A19CAE1D3A2A630076D2C9 /* MainTableViewCell.h */,
 				B0A19CAF1D3A2A630076D2C9 /* MainTableViewCell.m */,
 				B0A19CB01D3A2A630076D2C9 /* MainTableViewCell.xib */,
-				B09256281D3BA363002E9BCB /* Mid1ViewTableViewCell.h */,
-				B09256291D3BA363002E9BCB /* Mid1ViewTableViewCell.m */,
-				B092562A1D3BA363002E9BCB /* Mid1ViewTableViewCell.xib */,
 				B06B46A11D3FD6DB006C9908 /* NodataView.h */,
 				B06B46A21D3FD6DB006C9908 /* NodataView.m */,
 				B09F38701D49D097006308D7 /* MessageTableViewCell.h */,
@@ -1288,7 +1280,6 @@
 				B0E5BD3C1D44EB96001BC650 /* Detail2TableViewCell.xib in Resources */,
 				B09F386F1D49D080006308D7 /* MessageResultViewController.xib in Resources */,
 				B098600B1D3C69D900902AAE /* DoctorTableViewCell.xib in Resources */,
-				B092562C1D3BA363002E9BCB /* Mid1ViewTableViewCell.xib in Resources */,
 				B0A19C681D3A167F0076D2C9 /* CustomPickerView.xib in Resources */,
 				B09F38691D49D080006308D7 /* MessageViewController.xib in Resources */,
 				B0A19CC21D3A61A10076D2C9 /* AskListViewController.xib in Resources */,
@@ -1399,7 +1390,6 @@
 				B09F38451D48A571006308D7 /* PresentView.m in Sources */,
 				B0E5BD401D44F50B001BC650 /* Detail3TableViewCell.m in Sources */,
 				B022ECAB1D4B57890084429B /* ChatListReq.m in Sources */,
-				B092562B1D3BA363002E9BCB /* Mid1ViewTableViewCell.m in Sources */,
 				B0331F2B1D3A127500E82582 /* AppDelegate.m in Sources */,
 				B09F38321D48622E006308D7 /* SDWebImageManager+MJ.m in Sources */,
 				B0E5BD361D44EB86001BC650 /* Detail1TableViewCell.m in Sources */,

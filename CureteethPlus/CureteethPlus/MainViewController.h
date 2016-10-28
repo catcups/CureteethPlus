@@ -14,7 +14,6 @@
 #import "BannerModel.h"
 #import "ClinincModel.h"
 #import "IconModel.h"
-#import "Mid1ViewTableViewCell.h"
 #import "ArticleModel.h"
 #import "MSPlaceHolderTextView.h"
 #import "SearchResultView.h"

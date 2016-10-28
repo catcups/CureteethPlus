@@ -66,6 +66,9 @@
     self.scrollView.backgroundColor = [UIColor clearColor];
     //    self.scrollView.bounces = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.scrollEnabled = NO; // 禁止用户拖动scrollView
+    
+
     self.scrollView.delegate = self;
     [self addSubview:self.scrollView];
 }
@@ -128,7 +131,7 @@
 - (void)titleClickFuncation:(UIButton *)sender
 {
     if (self.titleClick) {
-        self.titleClick(sender.tag);
+        self.titleClick(sender.titleLabel.text);
     }
 }
 
