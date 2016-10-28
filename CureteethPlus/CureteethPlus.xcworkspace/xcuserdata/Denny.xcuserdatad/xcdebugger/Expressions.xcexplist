@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[AskViewController setPickerDoneCallback:PickerView:]:AskViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MainDetailReq processResponse:]:MainDetailReq.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "clinic.imageArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[Detail2ViewController tableView:numberOfRowsInSection:]:Detail2ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataSource">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController textViewDidChange:]:MapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[CommonTool readUserDefaultsByKey:KCity]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController onGetPoiResult:result:errorCode:]:MapViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SearchReq params]:SearchReq.m">
+      </ContextState>
+      <ContextState
+         contextName = "main:main.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.ClinincModelArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__33-[MainViewController viewDidLoad]_block_invoke:MainViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[LGCalendarCell isWeekend]:LGCalendarCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.date.getDay">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CertificateViewController onbutton1:]:CertificateViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.currentImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__37-[DPostImageRequest request:failure:]_block_invoke.73:DPostImageRequest.m">
+      </ContextState>
+      <ContextState
+         contextName = "__36-[AskListViewController viewDidLoad]_block_invoke:AskListViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController locationManager:didUpdateLocations:]:LoginViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MidViewController initWithModel:index:]:MidViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "__copy_helper_block_:ReserveViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "responseObject">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainDetailViewController bindDataWithDic:]:MainDetailViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MidViewController tableView:numberOfRowsInSection:]:MidViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataSource">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__37-[DPostImageRequest request:failure:]_block_invoke_2:DPostImageRequest.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ReserveView awakeFromNib]:ReserveView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.unLoginView.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MoreViewController viewDidLoad]:MoreViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[UIScreen mainScreen].bounds.size.width">
+            </PersistentString>
+            <PersistentString
+               value = "CGRectGetWidth(self.view.frame)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NSDate(calender) numberOFdateFrom:]:NSDate+calender.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cps.day">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__37-[DPostImageRequest request:failure:]_block_invoke:DPostImageRequest.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imageArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController keyboardWillShow:]:MapViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[GAItemButton resetFrame:]:GAItemButton.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewController onGetGeoCodeResult:result:errorCode:]:MapViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController loadMidView:]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.index">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ReserveViewController setPickerDoneCallback:PickerView:]:ReserveViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ResultDoctorTableViewCell setModel:]:ResultDoctorTableViewCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[AskViewController handDataWith:]:AskViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController tableView:cellForRowAtIndexPath:]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.ClinincModelArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__58-[ReserveViewController setPickerDoneCallback:PickerView:]_block_invoke:ReserveViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Detail2ViewController ResultDoctorTableViewCellDeleagteClikeAsk:model:]:Detail2ViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MainViewController tableView:didSelectRowAtIndexPath:]:MainViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.mid1TableViewDatasource">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ReserveViewController LGCalendar:didSelectDate:currtentYear:currtentMonth:currentDay:]:ReserveViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.unAbleDays">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AskViewController onButton1:]:AskViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "sender.currentImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__88-[ReserveViewController LGCalendar:didSelectDate:currtentYear:currtentMonth:currentDay:]_block_invoke:ReserveViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginViewController didUpdateBMKUserLocation:]:LoginViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

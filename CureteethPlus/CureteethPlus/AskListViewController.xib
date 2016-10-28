@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AskListViewController">
+            <connections>
+                <outlet property="leftButton" destination="Xis-WR-1Jy" id="34t-BJ-LtS"/>
+                <outlet property="tableview" destination="6l4-kG-gqi" id="v9Y-va-bs7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gW-d9-bZz">
+                    <rect key="frame" x="200" y="0.0" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ciw-so-vUL"/>
+                    </constraints>
+                    <state key="normal" title="最新咨询">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onMidButton:" destination="-1" eventType="touchUpInside" id="fSa-2D-Y5d"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycT-m4-3ps">
+                    <rect key="frame" x="400" y="0.0" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Y1x-L0-H9o"/>
+                    </constraints>
+                    <state key="normal" title="历史咨询">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onRightButton:" destination="-1" eventType="touchUpInside" id="zN1-Rs-LVg"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28E-04-C2V">
+                    <rect key="frame" x="0.0" y="40" width="600" height="1"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="nG2-oG-Ioq"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6l4-kG-gqi">
+                    <rect key="frame" x="0.0" y="41" width="600" height="559"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="GbQ-ed-Vgf"/>
+                        <outlet property="delegate" destination="-1" id="owq-7q-UA6"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xis-WR-1Jy">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="TVn-y1-i1h"/>
+                    </constraints>
+                    <state key="normal" title="未完成">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onLeftButton:" destination="-1" eventType="touchUpInside" id="1FO-MT-hXu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="28E-04-C2V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7dX-fW-fnu"/>
+                <constraint firstItem="ycT-m4-3ps" firstAttribute="height" secondItem="Xis-WR-1Jy" secondAttribute="height" id="C6l-gT-h3a"/>
+                <constraint firstItem="Xis-WR-1Jy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MGV-sd-jHB"/>
+                <constraint firstItem="3gW-d9-bZz" firstAttribute="leading" secondItem="Xis-WR-1Jy" secondAttribute="trailing" id="OMl-Ki-hdX"/>
+                <constraint firstItem="ycT-m4-3ps" firstAttribute="width" secondItem="Xis-WR-1Jy" secondAttribute="width" id="POq-P0-Xaq"/>
+                <constraint firstAttribute="bottom" secondItem="6l4-kG-gqi" secondAttribute="bottom" id="Qu0-C4-vcw"/>
+                <constraint firstItem="6l4-kG-gqi" firstAttribute="top" secondItem="28E-04-C2V" secondAttribute="bottom" id="Swq-Bc-03V"/>
+                <constraint firstItem="ycT-m4-3ps" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TcM-c5-Xqd"/>
+                <constraint firstItem="3gW-d9-bZz" firstAttribute="width" secondItem="Xis-WR-1Jy" secondAttribute="width" id="Xfd-37-dxT"/>
+                <constraint firstAttribute="trailing" secondItem="ycT-m4-3ps" secondAttribute="trailing" id="Z7N-MN-fDJ"/>
+                <constraint firstItem="3gW-d9-bZz" firstAttribute="height" secondItem="Xis-WR-1Jy" secondAttribute="height" id="ZUd-y0-uzJ"/>
+                <constraint firstItem="Xis-WR-1Jy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bt1-he-HgD"/>
+                <constraint firstAttribute="trailing" secondItem="28E-04-C2V" secondAttribute="trailing" id="dfF-v7-NkD"/>
+                <constraint firstAttribute="trailing" secondItem="6l4-kG-gqi" secondAttribute="trailing" id="hkZ-d8-IM4"/>
+                <constraint firstItem="6l4-kG-gqi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mAG-eq-jFB"/>
+                <constraint firstItem="28E-04-C2V" firstAttribute="top" secondItem="ycT-m4-3ps" secondAttribute="bottom" id="o2P-xX-Lkm"/>
+                <constraint firstItem="3gW-d9-bZz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="t5U-gU-FGh"/>
+                <constraint firstItem="ycT-m4-3ps" firstAttribute="leading" secondItem="3gW-d9-bZz" secondAttribute="trailing" id="uqn-25-Q4y"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

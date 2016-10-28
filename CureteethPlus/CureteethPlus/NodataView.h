@@ -1,0 +1,13 @@
+//
+//  NodataView.h
+//  CureTeeth
+//
+//  Created by Denny on 16/7/18.
+//  Copyright © 2016年 Denny. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface NodataView : UIView
+@property (nonatomic,strong)UILabel *titleLab;
+@end

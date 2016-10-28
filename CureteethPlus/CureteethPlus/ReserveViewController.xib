@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReserveViewController">
+            <connections>
+                <outlet property="leftButton" destination="taU-CH-8pt" id="rEe-ye-VLW"/>
+                <outlet property="rightButton" destination="sJn-Z0-ikm" id="u9C-ed-Skt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="HGv-wq-WZA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预约诊所" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfV-i6-AaZ">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="CSX-HS-UWo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所选医师" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmq-Ez-RRe">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="8li-TT-XLa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJn-Z0-ikm">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="KeT-2p-xaG"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" red="0.16862745100000001" green="0.51372549020000002" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onRightButton:" destination="-1" eventType="touchUpInside" id="yc4-Gz-7sX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taU-CH-8pt">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="jFf-Sg-578"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" red="0.17254901960784313" green="0.51764705882352946" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="sJn-Z0-ikm" secondAttribute="trailing" id="32Q-lM-5yO"/>
+                <constraint firstItem="mfV-i6-AaZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Dib-rW-yQW"/>
+                <constraint firstItem="taU-CH-8pt" firstAttribute="top" secondItem="mfV-i6-AaZ" secondAttribute="bottom" id="EK2-8M-teS"/>
+                <constraint firstItem="Jmq-Ez-RRe" firstAttribute="leading" secondItem="mfV-i6-AaZ" secondAttribute="trailing" id="Fwo-RB-Tft"/>
+                <constraint firstAttribute="trailing" secondItem="Jmq-Ez-RRe" secondAttribute="trailing" id="JUa-B3-Slo"/>
+                <constraint firstItem="Jmq-Ez-RRe" firstAttribute="height" secondItem="mfV-i6-AaZ" secondAttribute="height" id="N13-1E-CKf"/>
+                <constraint firstItem="sJn-Z0-ikm" firstAttribute="leading" secondItem="taU-CH-8pt" secondAttribute="trailing" id="UKr-iU-nVH"/>
+                <constraint firstItem="sJn-Z0-ikm" firstAttribute="top" secondItem="Jmq-Ez-RRe" secondAttribute="bottom" id="cHy-2O-3Zu"/>
+                <constraint firstItem="sJn-Z0-ikm" firstAttribute="height" secondItem="taU-CH-8pt" secondAttribute="height" id="cOt-2Z-e83"/>
+                <constraint firstItem="Jmq-Ez-RRe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="grb-X3-v0v"/>
+                <constraint firstItem="Jmq-Ez-RRe" firstAttribute="width" secondItem="mfV-i6-AaZ" secondAttribute="width" id="re3-yh-AzG"/>
+                <constraint firstItem="taU-CH-8pt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sQO-Sg-gNT"/>
+                <constraint firstItem="sJn-Z0-ikm" firstAttribute="width" secondItem="taU-CH-8pt" secondAttribute="width" id="tbn-7v-UCi"/>
+                <constraint firstItem="mfV-i6-AaZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wnM-eI-1rM"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

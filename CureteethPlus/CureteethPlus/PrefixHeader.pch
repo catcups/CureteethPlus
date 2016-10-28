@@ -1,0 +1,48 @@
+//
+//  PrefixHeader.pch
+//  CureteethPlus
+//
+//  Created by Denny on 16/7/16.
+//  Copyright © 2016年 Denny. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UIImageView+WebCache.h"
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>          //引入base相关头文件
+#import <BaiduMapAPI_Map/BMKMapComponent.h>            //引入地图功能所有头文件
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>      //引入检索功能所有头文件
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>  //引入云检索功能的所有头文件
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>  //引入定位功能所有的头文件
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>        //引入计算工具所有的头文件
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>
+#import "CustomPickerView.h"
+#import "GAItemButton.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "CommonTool.h"
+#define Kmobile @"Kmobile"
+#define KCustomerId @"CustomerId"
+#define Kpassworld @"Kpassworld"
+#define KName @"KName"
+#import "StringUtils.h"
+#define BaseUrl @"http://www.eeboo.cn/"
+#import "UIColor+Hex.h"
+#import <MJRefresh/MJRefresh.h>
+#define KisLogin @"KisLogin"
+#define Kphoto @"kphoto"
+#define KPhoneNumber @"KPhoneNumber"
+#define Klat @"klat"
+#define KCity @"KCity"
+#import "BaseNavViewController.h"
+#define Klng @"klng"
+#define KAddress @"KAddress"
+#define ScrMain_Width  [UIScreen mainScreen].bounds.size.width
+#define ScrMain_Height  [UIScreen mainScreen].bounds.size.height
+#define KMainColor [UIColor colorWithHexRGB:@"#3a98d7"]
+#define KGrayColor [UIColor colorWithHexRGB:@"#e2e4e7"]
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#import <UIButton+WebCache.h>
+#endif /* PrefixHeader_pch */

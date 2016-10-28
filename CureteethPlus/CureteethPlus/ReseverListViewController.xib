@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReseverListViewController">
+            <connections>
+                <outlet property="leftButton" destination="kdH-oQ-lGx" id="gye-Zf-nju"/>
+                <outlet property="tableview" destination="dcr-fS-MFG" id="Dng-Tn-5C6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdH-oQ-lGx">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="gvw-KK-O83"/>
+                    </constraints>
+                    <state key="normal" title="历史预约">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="onLeftButton:" destination="-1" eventType="touchUpInside" id="prc-FQ-ASK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBh-u4-Ggy">
+                    <rect key="frame" x="300" y="0.0" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="2d0-EJ-Kc8"/>
+                    </constraints>
+                    <state key="normal" title="未完成预约">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onRightbutton:" destination="-1" eventType="touchUpInside" id="RAp-Dk-b9V"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dcr-fS-MFG">
+                    <rect key="frame" x="0.0" y="41" width="600" height="559"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="wzN-Lh-HHc"/>
+                        <outlet property="delegate" destination="-1" id="ikn-UP-agh"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNU-2w-Uar">
+                    <rect key="frame" x="0.0" y="40" width="600" height="1"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="MYO-lo-l7G"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="dcr-fS-MFG" secondAttribute="bottom" id="0pZ-2L-IhW"/>
+                <constraint firstItem="dcr-fS-MFG" firstAttribute="top" secondItem="FNU-2w-Uar" secondAttribute="bottom" id="4Xr-Bh-nTB"/>
+                <constraint firstItem="FNU-2w-Uar" firstAttribute="top" secondItem="OBh-u4-Ggy" secondAttribute="bottom" id="5n1-Y5-lDe"/>
+                <constraint firstItem="kdH-oQ-lGx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7Dj-Ma-LtI"/>
+                <constraint firstItem="kdH-oQ-lGx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8ob-SR-Jll"/>
+                <constraint firstItem="OBh-u4-Ggy" firstAttribute="leading" secondItem="kdH-oQ-lGx" secondAttribute="trailing" id="ECS-jO-Qmy"/>
+                <constraint firstItem="OBh-u4-Ggy" firstAttribute="height" secondItem="kdH-oQ-lGx" secondAttribute="height" id="EsC-dw-0Ro"/>
+                <constraint firstItem="OBh-u4-Ggy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="U3q-4v-N2p"/>
+                <constraint firstAttribute="trailing" secondItem="dcr-fS-MFG" secondAttribute="trailing" id="ZCD-50-HGt"/>
+                <constraint firstAttribute="trailing" secondItem="OBh-u4-Ggy" secondAttribute="trailing" id="b8Q-cD-PnD"/>
+                <constraint firstItem="FNU-2w-Uar" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f6L-o5-K4l"/>
+                <constraint firstAttribute="trailing" secondItem="FNU-2w-Uar" secondAttribute="trailing" id="pPU-zY-qMw"/>
+                <constraint firstItem="OBh-u4-Ggy" firstAttribute="width" secondItem="kdH-oQ-lGx" secondAttribute="width" id="rfk-Gx-HjH"/>
+                <constraint firstItem="dcr-fS-MFG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xqw-Bd-3k7"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
