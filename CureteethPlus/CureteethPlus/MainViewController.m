@@ -240,7 +240,7 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     CGFloat height = (_midView.frame.size.height - 20) / 2 < (_midView.frame.size.width - 60) / 5 ? (_midView.frame.size.height - 20) / 2 : (_midView.frame.size.width - 60) / 5;
     layout.itemSize = CGSizeMake(height, height);
-    layout.minimumLineSpacing = 0.0; // 竖
+    layout.minimumLineSpacing = 10.0; // 竖
     layout.minimumInteritemSpacing = 10.0; // 横
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
