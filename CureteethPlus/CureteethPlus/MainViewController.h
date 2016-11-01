@@ -28,11 +28,11 @@
 @property (weak, nonatomic) IBOutlet UIView *midView;  // 10item
 @property (weak, nonatomic) IBOutlet DennyScrollView *dennyScrollview;  // 轮播图
 @property (weak, nonatomic) IBOutlet UIView *midView1;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
-@property (nonatomic,strong)NSMutableArray *ArticleModelArray;
-@property (nonatomic,strong)NSMutableArray *BannerModellArray;
-@property (nonatomic,strong)NSMutableArray *ClinincModelArray;
-@property (nonatomic,strong)NSMutableArray *IconModelArray;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;  
+@property (nonatomic,strong)NSMutableArray *ArticleModelArray;  // 广告轮播
+@property (nonatomic,strong)NSMutableArray *BannerModellArray;  // 轮播图
+@property (nonatomic,strong)NSMutableArray *ClinincModelArray;  // 诊所列表
+@property (nonatomic,strong)NSMutableArray *IconModelArray;     // 十个item
 @property (nonatomic,strong)UIButton *titleButton;
 @property (nonatomic,assign)NSInteger index;
 @property (nonatomic,strong)NSMutableArray *mid1TableViewDatasource;

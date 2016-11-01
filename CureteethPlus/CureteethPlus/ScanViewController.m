@@ -5,7 +5,7 @@
 //  Created by Denny on 16/7/14.
 //  Copyright © 2016年 Denny. All rights reserved.
 //
-
+// 扫二维码的主页面
 #import "ScanViewController.h"
 #import "ScanView.h"
 #import "ScanShowView.h"

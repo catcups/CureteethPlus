@@ -64,19 +64,19 @@
     self.searChTextfield.idelegate = self;
     self.searChTextfield.placeholder = @"请输入诊所或牙医名称";
     [self startLoc];
+    [self getItem];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadWithAddress:) name:@"NSNotificationOfreloadWithAddress" object:nil];
-//    self.scrollview.mj_header =  [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        [self getdataSourceWithClinicName];
-//    }];
+    self.scrollview.mj_header =  [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self.ClinincModelArray removeAllObjects];
+        self.start = 1;
+        [self getdataSourceWithClinicName];
+    }];
     self.scrollview.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self loadMoreDataFromNet];
     }];
 }
-- (void)reloadWithAddress:(NSNotification *)notification {
-    [self.titleButton setTitle:[CommonTool readUserDefaultsByKey:KAddress] forState:UIControlStateNormal];
-    [self getdataSourceWithClinicName];
-}
-- (void)getdataSourceWithClinicName{
+// 设置十个item.轮播广告数据与轮播图url
+- (void)getItem {
     MainReq *req = [[MainReq alloc]init];
     req.lat = [CommonTool readUserDefaultsByKey:Klat];
     req.lng = [CommonTool readUserDefaultsByKey:Klng];
@@ -93,6 +93,7 @@
         for (ArticleModel *model in ws.mid1TableViewDatasource) {
             [titles addObject:model.title];
         };
+        // 广告轮播
         QHScrollUpDownView *scroller = [[QHScrollUpDownView alloc] initWithFrame:CGRectMake(70, 0, ws.midView1.frame.size.width - 70, 60) titles:titles];
         [self.midView1 addSubview:scroller];
         scroller.titleClick = ^(NSString *title) {
@@ -105,13 +106,37 @@
             }
             [self.navigationController pushViewController:mid1VC animated:YES];
         };
-        ws.ClinincModelArray = [NSMutableArray arrayWithArray:responseObject[@"clinincArray"]];
         [ws.dennyScrollview getDennyImageArray:responseObject[@"bannerImageArray"]];
         [ws.tableview reloadData];
         ws.tableview.frame = CGRectMake(0, 40 + 130 + 150 + 60, CGRectGetWidth(self.view.frame),110 * ws.ClinincModelArray.count);
         self.tableviewHeight.constant = self.ClinincModelArray.count * 110 + 49;
         self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame),49 + 395 +110 * self.ClinincModelArray.count);
         NSLog(@"请求成功~~~");
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [SVProgressHUD dismiss];
+    }];
+}
+- (void)reloadWithAddress:(NSNotification *)notification {
+    [self.titleButton setTitle:[CommonTool readUserDefaultsByKey:KAddress] forState:UIControlStateNormal];
+    [self getdataSourceWithClinicName];
+}
+- (void)getdataSourceWithClinicName{
+    MainReq *req = [[MainReq alloc]init];
+    req.lat = [CommonTool readUserDefaultsByKey:Klat];
+    req.lng = [CommonTool readUserDefaultsByKey:Klng];
+    req.start = [NSNumber numberWithInteger:0];
+    req.count = [NSNumber numberWithInteger:10];
+    WS(ws);
+    [SVProgressHUD show];
+    [req request:^(NSURLSessionDataTask *task, id responseObject) {
+        [SVProgressHUD dismiss];
+        ws.ClinincModelArray = [NSMutableArray arrayWithArray:responseObject[@"clinincArray"]];
+        [ws.tableview reloadData];
+        ws.tableview.frame = CGRectMake(0, 40 + 130 + 150 + 60, CGRectGetWidth(self.view.frame),110 * ws.ClinincModelArray.count);
+        self.tableviewHeight.constant = self.ClinincModelArray.count * 110 + 49;
+        self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame),49 + 395 +110 * self.ClinincModelArray.count);
+        NSLog(@"请求成功~~~");
+        [self.scrollview.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [SVProgressHUD dismiss];
     }];
@@ -193,7 +218,7 @@
         self.searchResultView.resultLabel.hidden = YES;
     }
 }
-
+// 设置标题
 -(void)setTitleView {
     self.titleButton = [[UIButton alloc]initWithFrame:CGRectMake(50,0,[UIScreen mainScreen].bounds.size.width - 100, 44)];
     [self.titleButton setTitle:[CommonTool readUserDefaultsByKey:KAddress] forState:UIControlStateNormal];
@@ -205,7 +230,7 @@
     self.navigationItem.titleView = self.titleButton;
 
 }
-
+// 加载十个item
 - (void)loadMidView:(NSMutableArray *)array{
     IconModel *model = array[0];
     self.iconModel = model;
@@ -311,47 +336,12 @@
     }else{
         NSLog(@"反geo检索发送失败");
     }
-//    CLLocationCoordinate2D coordinate = userLocation.location.coordinate;
-//    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
-//    [geoCoder reverseGeocodeLocation:userLocation.location completionHandler:^(NSArray *placemarks, NSError *error) {
-//        if (placemarks.count > 0) {
-//            NSString *address;
-//            CLPlacemark *placemark = placemarks[0];
-//            NSString *street,*city,*sublocality,*state;
-//            if (!placemark.addressDictionary[@"Street"]) {
-//                street = @"";
-//            }else {
-//                street = placemark.addressDictionary[@"Street"];
-//            }if (!placemark.addressDictionary[@"City"]) {
-//                city = @"";
-//            }else {
-//                city = placemark.addressDictionary[@"City"];
-//            }if (!placemark.addressDictionary[@"SubLocality"]) {
-//                sublocality = @"";
-//            }else {
-//                sublocality = placemark.addressDictionary[@"SubLocality"];
-//            }if (!placemark.addressDictionary[@"State"]) {
-//                state = @"";
-//            }else {
-//                state = placemark.addressDictionary[@"State"];
-//            }
-//            if ([state isEqualToString:city]) { // 判断省与市的名字是否相同 相同的话去掉一个 例 北京市与上海市的省会与市的名字一样
-//                address = [NSString stringWithFormat:@"%@%@%@",city,sublocality,street];
-//            } else {
-//                address = [NSString stringWithFormat:@"%@%@%@%@",state,city,sublocality,street];
-//            }
             [CommonTool storeUserDefaults:[NSNumber numberWithDouble:userLocation.location.coordinate.latitude] ForKey:Klat];
             [CommonTool storeUserDefaults:[NSNumber numberWithDouble:userLocation.location.coordinate.longitude] ForKey:Klng];
             //找到了当前位置城市后就关闭服务
             [_locService stopUserLocationService];
             [self setTitleView];
             [self getdataSourceWithClinicName];
-//        } else if (error == nil && placemarks.count == 0) {
-//            NSLog(@"No location and error returned");
-//        } else if (error) {
-//            NSLog(@"Location error: %@", error);  // 定位错误
-//        }
-//    }];
 }
 // 根据经纬度 获取 地区信息
 -(void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error {

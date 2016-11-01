@@ -35,54 +35,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CureteethPlus/AskViewController.m"
-            timestampString = "498715034.131942"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[AskViewController viewDidLoad]"
-                  moduleName = "&#x533b;&#x7259;&#x554a;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vanessa/Desktop/Object/%E5%A4%A9%E5%8C%BB-iOS/%E5%A4%A9%E5%8C%BB/CureteethPlus/CureteethPlus/AskViewController.m"
-                  timestampString = "499336134.587385"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "2084">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__32-[AskViewController viewDidLoad]_block_invoke"
-                  moduleName = "&#x533b;&#x7259;&#x554a;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vanessa/Desktop/Object/%E5%A4%A9%E5%8C%BB-iOS/%E5%A4%A9%E5%8C%BB/CureteethPlus/CureteethPlus/AskViewController.m"
-                  timestampString = "499336134.589323"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "CureteethPlus/AskReq.m"
             timestampString = "498715081.124277"
             startingColumnNumber = "9223372036854775807"

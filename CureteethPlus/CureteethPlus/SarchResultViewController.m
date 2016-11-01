@@ -5,7 +5,7 @@
 //  Created by Denny on 16/7/17.
 //  Copyright © 2016年 Denny. All rights reserved.
 //
-
+// 点击搜索后跳转的界面
 #import "SarchResultViewController.h"
 #import "ResultClinicViewController.h"
 #import "ResultDoctorViewController.h"
@@ -38,7 +38,7 @@
     }];
     [self getChinldViewTwo];
 }
-
+// 展示诊所的界面
 -(void)getChinldViewOne {
     if (!_chinldOne) {
         _chinldOne = [[ResultClinicViewController alloc]initWithDataSource:self.dicDataSource[@"clinincArray"]];
@@ -52,7 +52,7 @@
     }
     _chinldOne.view.hidden = NO;
 }
-
+// 展示牙医的界面
 -(void)getChinldViewTwo{
     if (!_childTwo) {
         _childTwo = [[ResultDoctorViewController alloc]initWithDataSource:self.dicDataSource[@"doctorArray"]];

@@ -33,8 +33,7 @@
     return self;
 }
 //重绘视图
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
     // Drawing code
     CGContextRef context = UIGraphicsGetCurrentContext();
     

@@ -5,7 +5,7 @@
 //  Created by Denny on 16/7/21.
 //  Copyright © 2016年 Denny. All rights reserved.
 //
-
+// 十个item图标点击跳转的页面
 #import "MidViewController.h"
 #import "ResultDoctorTableViewCell.h"
 #import "SearchDoctorModel.h"

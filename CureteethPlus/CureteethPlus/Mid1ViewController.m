@@ -5,7 +5,7 @@
 //  Created by Denny on 16/7/23.
 //  Copyright © 2016年 Denny. All rights reserved.
 //
-
+// 广告轮播点击跳转之后的页面
 #import "Mid1ViewController.h"
 
 @interface Mid1ViewController ()<UIWebViewDelegate>
