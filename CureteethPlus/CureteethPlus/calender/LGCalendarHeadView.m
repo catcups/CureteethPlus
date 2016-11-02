@@ -21,7 +21,9 @@ NSString *const KDateChangeNotification = @"KDateChangeNotificationName";
 @end
 
 
-@implementation LGCalendarHeadView
+@implementation LGCalendarHeadView {
+    CGFloat currOffset;
+}
 
 -(NSMutableArray *)headerBtnArray
 {
@@ -110,6 +112,7 @@ NSString *const KDateChangeNotification = @"KDateChangeNotificationName";
             break;
     }
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:newDate forKey:@"userInfoKey"];
+    [userInfo setObject:[NSString stringWithFormat:@"%f", currOffset] forKey:@"offSet"];
     [userInfo setObject:string forKey:@"string"];
     [[NSNotificationCenter defaultCenter] postNotificationName:KDateChangeNotification object:self userInfo:userInfo];
 }
@@ -198,6 +201,7 @@ NSString *const KDateChangeNotification = @"KDateChangeNotificationName";
 
 -(void)setScrollOffset:(CGFloat)scrollOffset
 {
+    currOffset = scrollOffset;
     if (_scrollOffset != scrollOffset) {
         _scrollOffset = scrollOffset;
         [self.collectionView setContentOffset:CGPointMake(scrollOffset * self.collectionFlowLayout.itemSize.width, 0) animated:NO];

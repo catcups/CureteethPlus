@@ -32,7 +32,9 @@
 @property (nonatomic,assign)BOOL button3HaveImage;
 @end
 
-@implementation AskViewController
+@implementation AskViewController {
+    
+}
 - (id)init {
     if (self = [super init]) {
         self.title = @"工作台";
@@ -54,24 +56,32 @@
     self.content.layer.borderWidth =self.submitButton.layer.borderWidth= 0.5;
     self.content.layer.borderColor = [UIColor lightGrayColor].CGColor;
 }
+- (UIButton *)codeButton {
+    if (!_codeButton) {
+        _codeButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, self.codeTextfield.frame.origin.y- 5, 80, 40)];
+        [_codeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
+        [_codeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [_codeButton addTarget:self action:@selector(sendCode:) forControlEvents:UIControlEventTouchUpInside];
+        _codeButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    }
+    return _codeButton;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.mobileTextField addTarget:self action:@selector(textChangeValue:) forControlEvents:UIControlEventEditingChanged];
-    self.codeButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, self.codeTextfield.frame.origin.y- 5, 80, 40)];
-    [self.codeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-    [self.codeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [self.codeButton addTarget:self action:@selector(sendCode:) forControlEvents:UIControlEventTouchUpInside];
-    self.codeButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [self.codeView addSubview:self.codeButton];
     AskReq *req = [[AskReq alloc]init];
     if(!self.clinicId1 && !self.doctorId1){
         req.lat = [CommonTool readUserDefaultsByKey:Klat];
         req.lng = [CommonTool readUserDefaultsByKey:Klng];
+        NSLog(@"!self.clinicID-doctorID---%@, %@", req.lat, req.lng);
     }
     if(self.doctorId1){
         req.doctorId = self.doctorId1;
+        NSLog(@"doctorID%@", req.doctorId);
     }if (self.clinicId1) {
         req.clinicId = self.clinicId1;
+        NSLog(@"clinicID-%@", req.clinicId);
     }
     [req request:^(NSURLSessionDataTask *task, AskModel *responseObject) {
         [self handDataWith:responseObject];

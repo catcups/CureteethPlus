@@ -34,7 +34,9 @@
 @property (strong, nonatomic) NSDate                     *maximumDate;
 @end
 static NSInteger offsetL ;
-@implementation LGCalendar
+@implementation LGCalendar {
+    CGFloat scrOffset; // btn按钮左右翻月的偏移量
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -59,7 +61,7 @@ static NSInteger offsetL ;
     self.layer.borderWidth  = 4.;
     self.layer.borderColor = [UIColor colorWithHexRGB:@"#f5f5f5"].CGColor;
     self.backgroundColor = [UIColor whiteColor];
-    
+    scrOffset      = 0;
     _titleFont        = [UIFont systemFontOfSize:15];
     _subtitleFont     = [UIFont systemFontOfSize:10];
     _weekdayFont      = [UIFont systemFontOfSize:15];
@@ -154,19 +156,29 @@ static NSInteger offsetL ;
 - (void)dateDidChange:(NSNotification *)note
 {
     NSDictionary *userInfo = note.userInfo;
-    NSDate *newDate = (NSDate *)userInfo[@"userInfoKey"];
-
     NSString *string = userInfo[@"string"];
+    NSString *offSet = userInfo[@"offSet"];
+    if (scrOffset == 0) {
+        scrOffset = offSet.floatValue;
+    }
     if (offsetL !=0) {
         if ([string isEqualToString:@"1"]){
-            offsetL --;
+            scrOffset--;
         }else {
-            offsetL ++;
+            scrOffset++;
         }
     }
-    if (newDate) {
-          self.selectedDate = newDate;
+    self.collectionView.contentOffset = CGPointMake(self.myWidth * scrOffset, 0);
+    if (self.currentDayOffset == 0) {
+        self.currentDayOffset = scrOffset;
+    }else{
+        if (self.currentDayOffset != scrOffset) {
+            self.header.todayButton.hidden = NO;
+        }else{
+            self.header.todayButton.hidden=  YES;
+        }
     }
+    _header.scrollOffset = scrOffset;
 }
 
 - (void)layoutSubviews
@@ -253,10 +265,12 @@ static NSInteger offsetL ;
             self.header.todayButton.hidden=  YES;
         }
     }
+    scrOffset = scrollOffset;
     _header.scrollOffset = scrollOffset;
 }
 
 -(void)onToday:(UIButton *)sender {
+    scrOffset = offsetL;
     [self scrollToDate:self.currentDate animate:NO];
 }
 

@@ -33,11 +33,18 @@
     BMKLocationService *_locService;
     CGFloat offSetY;
 }
+- (void)viewDidAppear:(BOOL)animated {
+    _searChTextfield.frame = CGRectMake(ScrMain_Width - 60, 5, 60, 30);
+}
 - (SearchPlaceHolderTextView *)searChTextfield {
     if (!_searChTextfield) {
-        _searChTextfield = [[SearchPlaceHolderTextView alloc] initWithFrame:CGRectMake(ScrMain_Width - 40, 0, 40, 40) imageFrame:CGRectMake(0, 0, 30, 30)];
+        _searChTextfield = [[SearchPlaceHolderTextView alloc] initWithFrame:CGRectMake(0, 0, ScrMain_Width, 40) imageFrame:CGRectMake(5, 5, 20, 20)];
+        
         _searChTextfield.delegate = self;
         _searChTextfield.idelegate = self;
+        [_searChTextfield setPlaceholder:@"请输入诊所或牙医名称"];
+        _searChTextfield.layer.cornerRadius = 10;
+        _searChTextfield.font = [UIFont systemFontOfSize:14];
         _searChTextfield.returnKeyType = UIReturnKeySearch;
     }
     return _searChTextfield;
@@ -52,12 +59,18 @@
     offSetY = _scrollview.contentOffset.y;
     if (offSetY < 50) {
         [UIView animateWithDuration:0.25 animations:^{
-            _searChTextfield.frame = CGRectMake(ScrMain_Width -40, 0, 40, 40);
+            _searChTextfield.frame = CGRectMake(ScrMain_Width - 60, 5, 60, 30);
+            [_searChTextfield setPlaceholder:@"搜索"];
+
+            _searChTextfield.searchImage.frame = CGRectMake(5, 5, 20, 20);
+            _searChTextfield.layer.cornerRadius = 10;
         }];
     } else {
         [UIView animateWithDuration:0.25 animations:^{
             _searChTextfield.frame = CGRectMake(0, 0, ScrMain_Width, 40);
-            _searChTextfield.placeholder = @"请输入诊所或牙医名称";
+            [_searChTextfield setPlaceholder:@"请输入诊所或牙医名称"];
+            _searChTextfield.searchImage.frame = CGRectMake(5, 5, 25, 25);
+            _searChTextfield.layer.cornerRadius = 0;
         }];
     }
 }
@@ -84,9 +97,6 @@
     [self configNavgation];
     self.start = 1 ;
     [self.view addSubview:self.searChTextfield];
-    [UIView animateWithDuration:0 animations:^{
-        _searChTextfield.frame = CGRectMake(ScrMain_Width - 40, 0, 40, 40);
-    }];
     [self startLoc];
     [self getItem];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadWithAddress:) name:@"NSNotificationOfreloadWithAddress" object:nil];
@@ -186,7 +196,9 @@
     self.searChTextfield.text = @"";
     [self.searchResultView removeFromSuperview];
     [UIView animateWithDuration:0.25 animations:^{
-        _searChTextfield.frame = CGRectMake(ScrMain_Width - 40, 0, 40, 40);
+        _searChTextfield.frame = CGRectMake(ScrMain_Width - 60, 5, 60, 30);
+        _searChTextfield.searchImage.frame = CGRectMake(5, 5, 20, 20);
+        _searChTextfield.layer.cornerRadius = 10;
     }];
     self.searchResultView = nil;
 }
@@ -196,7 +208,8 @@
     }
     [UIView animateWithDuration:0.25 animations:^{
         _searChTextfield.frame = CGRectMake(0, 0, ScrMain_Width, 40);
-        _searChTextfield.placeholder = @"请输入诊所或牙医名称";
+        _searChTextfield.searchImage.frame = CGRectMake(5, 5, 25, 25);
+        _searChTextfield.layer.cornerRadius = 0;
     }];
     self.searChTextfield.placeHolderLabel.alpha = 0.;
     self.searChTextfield.searchImage.hidden= YES;
