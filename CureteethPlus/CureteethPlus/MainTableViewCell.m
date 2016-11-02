@@ -17,10 +17,11 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 - (void)setModel:(ClinincModel *)model {
+    self.headImage.layer.cornerRadius = 8;
+    self.headImage.layer.masksToBounds = YES;
     [self.headImage sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.yyaai.com/uploads/clinic/%@",model.clinicLogo]]];
     self.name.text = model.clinicName;
     self.content.text = model.description1;

@@ -24,7 +24,7 @@
 @property (strong, nonatomic) CADisplayLink *displayLink;
 @property (assign,nonatomic) int count;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
-@property (weak, nonatomic) IBOutlet SearchPlaceHolderTextView *searChTextfield;    // 首页搜索
+@property (strong, nonatomic) SearchPlaceHolderTextView *searChTextfield;    // 首页搜索
 @property (weak, nonatomic) IBOutlet UIView *midView;  // 10item
 @property (weak, nonatomic) IBOutlet DennyScrollView *dennyScrollview;  // 轮播图
 @property (weak, nonatomic) IBOutlet UIView *midView1;

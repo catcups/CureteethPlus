@@ -40,7 +40,7 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>To find mathes nearby, we'll need to access your location while you use $(PRODUCT_NAME).</string>
+	<string>若不允许,你将无法在$(PRODUCT_NAME)中寻找到附近的诊所,以及一些相关的操作</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>In order to upload a photo to $(PRODUCT_NAME), we need to access photos on your device.</string>
 	<key>UILaunchStoryboardName</key>

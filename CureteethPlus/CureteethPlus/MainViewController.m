@@ -20,7 +20,7 @@
 #import "QHCollectionItemGroup.h"
 #import "QHScrollUpDownView.h"
 //static CGFloat kdefaultlat = 
-@interface MainViewController ()<BMKLocationServiceDelegate,UIAlertViewDelegate, UICollectionViewDelegate, BMKGeoCodeSearchDelegate>
+@interface MainViewController ()<BMKLocationServiceDelegate,UIAlertViewDelegate, UICollectionViewDelegate, BMKGeoCodeSearchDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) IconModel *iconModel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableviewHeight;
 @property (nonatomic, assign) NSInteger index1;
@@ -31,6 +31,16 @@
 
 @implementation MainViewController {
     BMKLocationService *_locService;
+    CGFloat offSetY;
+}
+- (SearchPlaceHolderTextView *)searChTextfield {
+    if (!_searChTextfield) {
+        _searChTextfield = [[SearchPlaceHolderTextView alloc] initWithFrame:CGRectMake(ScrMain_Width - 40, 0, 40, 40) imageFrame:CGRectMake(0, 0, 30, 30)];
+        _searChTextfield.delegate = self;
+        _searChTextfield.idelegate = self;
+        _searChTextfield.returnKeyType = UIReturnKeySearch;
+    }
+    return _searChTextfield;
 }
 - (id)init {
     if (self = [super init]) {
@@ -38,7 +48,19 @@
     }
     return self;
 }
-
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    offSetY = _scrollview.contentOffset.y;
+    if (offSetY < 50) {
+        [UIView animateWithDuration:0.25 animations:^{
+            _searChTextfield.frame = CGRectMake(ScrMain_Width -40, 0, 40, 40);
+        }];
+    } else {
+        [UIView animateWithDuration:0.25 animations:^{
+            _searChTextfield.frame = CGRectMake(0, 0, ScrMain_Width, 40);
+            _searChTextfield.placeholder = @"请输入诊所或牙医名称";
+        }];
+    }
+}
 - (void)configNavgation {
     UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 60, 44)];
     UIButton *leftbutton = [[UIButton alloc]initWithFrame:CGRectMake(-12, 0, 44, 44)];
@@ -61,16 +83,13 @@
     [super viewDidLoad];
     [self configNavgation];
     self.start = 1 ;
-    self.searChTextfield.idelegate = self;
-    self.searChTextfield.placeholder = @"请输入诊所或牙医名称";
+    [self.view addSubview:self.searChTextfield];
+    [UIView animateWithDuration:0 animations:^{
+        _searChTextfield.frame = CGRectMake(ScrMain_Width - 40, 0, 40, 40);
+    }];
     [self startLoc];
     [self getItem];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadWithAddress:) name:@"NSNotificationOfreloadWithAddress" object:nil];
-    self.scrollview.mj_header =  [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self.ClinincModelArray removeAllObjects];
-        self.start = 1;
-        [self getdataSourceWithClinicName];
-    }];
     self.scrollview.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self loadMoreDataFromNet];
     }];
@@ -78,8 +97,8 @@
 // 设置十个item.轮播广告数据与轮播图url
 - (void)getItem {
     MainReq *req = [[MainReq alloc]init];
-    req.lat = [CommonTool readUserDefaultsByKey:Klat];
-    req.lng = [CommonTool readUserDefaultsByKey:Klng];
+    req.lat = @"31";
+    req.lng = @"121";
     req.start = [NSNumber numberWithInteger:0];
     req.count = [NSNumber numberWithInteger:10];
     WS(ws);
@@ -136,7 +155,6 @@
         self.tableviewHeight.constant = self.ClinincModelArray.count * 110 + 49;
         self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame),49 + 395 +110 * self.ClinincModelArray.count);
         NSLog(@"请求成功~~~");
-        [self.scrollview.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [SVProgressHUD dismiss];
     }];
@@ -167,15 +185,22 @@
     self.searChTextfield.alpha =  1;
     self.searChTextfield.text = @"";
     [self.searchResultView removeFromSuperview];
+    [UIView animateWithDuration:0.25 animations:^{
+        _searChTextfield.frame = CGRectMake(ScrMain_Width - 40, 0, 40, 40);
+    }];
     self.searchResultView = nil;
 }
 -(void)textViewBeginEdit:(MSPlaceHolderTextView *)textView {
     if (!self.canshowSearch) {
         return;
     }
+    [UIView animateWithDuration:0.25 animations:^{
+        _searChTextfield.frame = CGRectMake(0, 0, ScrMain_Width, 40);
+        _searChTextfield.placeholder = @"请输入诊所或牙医名称";
+    }];
     self.searChTextfield.placeHolderLabel.alpha = 0.;
     self.searChTextfield.searchImage.hidden= YES;
-    self.searchResultView = [[SearchResultView alloc]initWithFrame:CGRectMake(0,41 , CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 41)];
+    self.searchResultView = [[SearchResultView alloc]initWithFrame:CGRectMake(0, 40, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 40)];
     self.searchResultView.delegate = self;
     [self.view addSubview:self.searchResultView];
 }
@@ -305,12 +330,14 @@
     self.tableview.delegate = nil;
 }
 - (void)startLoc {
+#if 0
     // 实例化定位管理器 并申请定位功能
     _locationManager = [[CLLocationManager alloc] init];
     // 如果没有授权则请求用户授权
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
         [_locationManager requestWhenInUseAuthorization];
     }
+#endif
     //初始化BMKLocationService
     _locService = [[BMKLocationService alloc]init];
     _locService.delegate = self;

@@ -72,6 +72,7 @@
     searchtextView = [[SearchPlaceHolderTextView alloc] initWithFrame:CGRectMake(0, 0, ScrMain_Width, 40) imageFrame:CGRectMake(0.18 * [UIScreen mainScreen].bounds.size.width, 7, 25, 25)];
     searchtextView.placeholder = @"请输入您所需要查询的地址";
     searchtextView.idelegate = self;
+    searchtextView.returnKeyType = UIReturnKeySearch;
     searchtextView.font = [UIFont systemFontOfSize:13];
     searchtextView.searchImage.frame = CGRectMake(0.17 * [UIScreen mainScreen].bounds.size.width, 7, 25, 25);
     searchtextView.delegate = self;
