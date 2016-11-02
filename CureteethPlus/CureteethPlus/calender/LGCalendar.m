@@ -61,7 +61,7 @@ static NSInteger offsetL ;
     self.layer.borderWidth  = 4.;
     self.layer.borderColor = [UIColor colorWithHexRGB:@"#f5f5f5"].CGColor;
     self.backgroundColor = [UIColor whiteColor];
-    scrOffset      = 0;
+    scrOffset         = 0;
     _titleFont        = [UIFont systemFontOfSize:15];
     _subtitleFont     = [UIFont systemFontOfSize:10];
     _weekdayFont      = [UIFont systemFontOfSize:15];
