@@ -18,6 +18,9 @@
         [self addSubview:self.resultLabel];
         self.resultLabel.hidden = YES;
         self.resultLabel.textAlignment = NSTextAlignmentCenter;
+        UIView *grayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 1)];
+        grayView.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:grayView];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapgesture)];
         tap.numberOfTapsRequired = 1;
         [self addGestureRecognizer:tap];

@@ -44,6 +44,7 @@
         _searChTextfield.idelegate = self;
         [_searChTextfield setPlaceholder:@"请输入诊所或牙医名称"];
         _searChTextfield.layer.cornerRadius = 10;
+        _searChTextfield.alpha = 0.8;
         _searChTextfield.font = [UIFont systemFontOfSize:14];
         _searChTextfield.returnKeyType = UIReturnKeySearch;
     }
@@ -61,7 +62,7 @@
         [UIView animateWithDuration:0.25 animations:^{
             _searChTextfield.frame = CGRectMake(ScrMain_Width - 60, 5, 60, 30);
             [_searChTextfield setPlaceholder:@"搜索"];
-
+            _searChTextfield.alpha = 0.8;
             _searChTextfield.searchImage.frame = CGRectMake(5, 5, 20, 20);
             _searChTextfield.layer.cornerRadius = 10;
         }];
@@ -69,6 +70,7 @@
         [UIView animateWithDuration:0.25 animations:^{
             _searChTextfield.frame = CGRectMake(0, 0, ScrMain_Width, 40);
             [_searChTextfield setPlaceholder:@"请输入诊所或牙医名称"];
+            _searChTextfield.alpha = 1;
             _searChTextfield.searchImage.frame = CGRectMake(5, 5, 25, 25);
             _searChTextfield.layer.cornerRadius = 0;
         }];
@@ -192,13 +194,13 @@
 
 -(void)textViewDidEndEditing:(UITextView *)textView {
     self.searChTextfield.searchImage.hidden = NO;
-    self.searChTextfield.alpha =  1;
     self.searChTextfield.text = @"";
     [self.searchResultView removeFromSuperview];
     [UIView animateWithDuration:0.25 animations:^{
         _searChTextfield.frame = CGRectMake(ScrMain_Width - 60, 5, 60, 30);
         _searChTextfield.searchImage.frame = CGRectMake(5, 5, 20, 20);
         _searChTextfield.layer.cornerRadius = 10;
+        self.searChTextfield.alpha = 0.8;
     }];
     self.searchResultView = nil;
 }
@@ -206,12 +208,13 @@
     if (!self.canshowSearch) {
         return;
     }
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0 animations:^{
         _searChTextfield.frame = CGRectMake(0, 0, ScrMain_Width, 40);
         _searChTextfield.searchImage.frame = CGRectMake(5, 5, 25, 25);
         _searChTextfield.layer.cornerRadius = 0;
+        _searChTextfield.alpha = 1;
     }];
-    self.searChTextfield.placeHolderLabel.alpha = 0.;
+//    self.searChTextfield.placeHolderLabel.alpha = 0.;
     self.searChTextfield.searchImage.hidden= YES;
     self.searchResultView = [[SearchResultView alloc]initWithFrame:CGRectMake(0, 40, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - 40)];
     self.searchResultView.delegate = self;
