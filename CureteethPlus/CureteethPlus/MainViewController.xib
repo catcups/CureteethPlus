@@ -13,6 +13,7 @@
                 <outlet property="midView1" destination="BKc-Tf-F4t" id="NZh-Ra-JCa"/>
                 <outlet property="scrollview" destination="BIa-7C-YGd" id="xVY-dd-HgR"/>
                 <outlet property="tableview" destination="pyg-Zt-eId" id="dyp-mO-gkd"/>
+                <outlet property="tableviewHeight" destination="kOk-jZ-fol" id="qzq-wW-ApW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -67,6 +68,9 @@
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pyg-Zt-eId">
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="287" id="kOk-jZ-fol"/>
+                                    </constraints>
                                     <connections>
                                         <outlet property="dataSource" destination="-1" id="0hP-jL-qyp"/>
                                         <outlet property="delegate" destination="-1" id="gY7-Wi-E1c"/>
@@ -92,7 +96,6 @@
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="gqR-qh-5r8" firstAttribute="centerY" secondItem="BIa-7C-YGd" secondAttribute="centerY" id="PU9-6H-2ps"/>
                         <constraint firstItem="gqR-qh-5r8" firstAttribute="leading" secondItem="BIa-7C-YGd" secondAttribute="leading" id="R4s-pk-dmI"/>
                         <constraint firstAttribute="bottom" secondItem="gqR-qh-5r8" secondAttribute="bottom" id="hyZ-gE-Lf7"/>
                         <constraint firstAttribute="trailing" secondItem="gqR-qh-5r8" secondAttribute="trailing" id="oAX-F5-Z3s"/>

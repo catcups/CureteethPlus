@@ -22,6 +22,7 @@
 //static CGFloat kdefaultlat = 
 @interface MainViewController ()<BMKLocationServiceDelegate,UIAlertViewDelegate, UICollectionViewDelegate, BMKGeoCodeSearchDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) IconModel *iconModel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableviewHeight;
 @property (nonatomic, assign) NSInteger index1;
 @property (nonatomic, assign) NSInteger start;
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -34,10 +35,14 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     _searChTextfield.frame = CGRectMake(ScrMain_Width - 60, 5, 60, 30);
+    _searChTextfield.alpha = 0.8;
+    _searChTextfield.searchImage.frame = CGRectMake(5, 5, 20, 20);
+    _searChTextfield.layer.cornerRadius = 10;
 }
 - (SearchPlaceHolderTextView *)searChTextfield {
     if (!_searChTextfield) {
         _searChTextfield = [[SearchPlaceHolderTextView alloc] initWithFrame:CGRectMake(0, 0, ScrMain_Width, 40) imageFrame:CGRectMake(5, 5, 20, 20)];
+        
         _searChTextfield.delegate = self;
         _searChTextfield.idelegate = self;
         [_searChTextfield setPlaceholder:@"请输入诊所或牙医名称"];
@@ -157,6 +162,7 @@
         ws.ClinincModelArray = [NSMutableArray arrayWithArray:responseObject[@"clinincArray"]];
         [ws.tableview reloadData];
         ws.tableview.frame = CGRectMake(0, CGRectGetMaxY(_midView1.frame), CGRectGetWidth(self.view.frame), 110 * ws.ClinincModelArray.count);
+        self.tableviewHeight.constant = self.ClinincModelArray.count * 110 ;
         self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetMaxY(_midView1.frame) +110 * self.ClinincModelArray.count + 49);
         NSLog(@"请求成功~~~");
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -176,6 +182,7 @@
         [ws.ClinincModelArray addObjectsFromArray:responseObject[@"clinincArray"]];
         [ws.tableview reloadData];
         ws.tableview.frame = CGRectMake(0, CGRectGetMaxY(_midView1.frame), CGRectGetWidth(self.view.frame), 110 * ws.ClinincModelArray.count);
+        self.tableviewHeight.constant = self.ClinincModelArray.count * 110 ;
         self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetMaxY(_midView1.frame) +110 * self.ClinincModelArray.count + 49);
         [self.scrollview.mj_footer endRefreshing];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -270,7 +277,6 @@
     NSArray *titlrArray = @[model.icon1,model.icon2,model.icon3,model.icon4,model.icon5,model.icon6,model.icon7,model.icon8,model.icon9,model.icon10];
       NSArray *imageArray = @[model.icon1Img,model.icon2Img,model.icon3Img,model.icon4Img,model.icon5Img,model.icon6Img,model.icon7Img,model.icon8Img,model.icon9Img,model.icon10Img];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-//    CGFloat height = (_midView.frame.size.height - 20) / 2 < (_midView.frame.size.width - 60) / 5 ? (_midView.frame.size.height - 20) / 2 : (_midView.frame.size.width - 60) / 5;
     CGFloat height = (_midView.frame.size.height - 30) / 2 < (_midView.frame.size.width - 100) / 5 ? (_midView.frame.size.height - 30) / 2 : (_midView.frame.size.width - 100) / 5;
     layout.itemSize = CGSizeMake(height, height);
     layout.minimumLineSpacing = 10.0; // 竖
