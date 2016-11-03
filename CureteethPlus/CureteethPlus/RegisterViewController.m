@@ -18,16 +18,21 @@
 @end
 
 @implementation RegisterViewController
+- (UIButton *)codeButton {
+    if (!_codeButton) {
+        _codeButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, _codeTextField.frame.origin.y- 5, 80, 40)];
+        [_codeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
+        [_codeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [_codeButton addTarget:self action:@selector(sendCode:) forControlEvents:UIControlEventTouchUpInside];
+        _codeButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    }
+    return _codeButton;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"注册";
     // Do any additional setup after loading the view from its nib.
-    self.codeButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, self.codeTextField.frame.origin.y- 5, 80, 40)];
-    [self.codeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-    [self.codeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [self.codeButton addTarget:self action:@selector(sendCode:) forControlEvents:UIControlEventTouchUpInside];
-    self.codeButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [self.scrollview addSubview:self.codeButton];
     self.submitButton.layer.cornerRadius = 5;
     self.navigationController.navigationBarHidden = NO;

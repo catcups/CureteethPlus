@@ -81,6 +81,7 @@
     return YES;
 }
 - (IBAction)wxLogin:(id)sender { // 微信登录
+    NSLog(@"微信登录");
 }
 
 - (IBAction)tapgesture:(id)sender {

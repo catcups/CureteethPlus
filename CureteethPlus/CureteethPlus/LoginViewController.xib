@@ -81,8 +81,8 @@
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czy-Uq-rux">
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="16.5" id="Nsp-c4-jVm"/>
-                                        <constraint firstAttribute="width" constant="25" id="yLE-z8-reO"/>
+                                        <constraint firstAttribute="height" constant="12" id="Nsp-c4-jVm"/>
+                                        <constraint firstAttribute="width" constant="20" id="yLE-z8-reO"/>
                                     </constraints>
                                     <state key="normal" title="Button" image="visible"/>
                                     <connections>
@@ -118,12 +118,12 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEQ-x8-xQC">
                                     <color key="backgroundColor" red="0.20230334997177124" green="0.59261626005172729" blue="0.85288041830062866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="M4g-Fd-UWW"/>
                                         <constraint firstAttribute="height" constant="40" id="gTJ-Dd-aLJ"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="vKU-vA-7vB"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" title="微信登录" image="微信登录">
+                                    <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                    <state key="normal" title="微信登录" image="微信登录1">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
@@ -133,10 +133,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrx-Xu-I9J">
                                     <color key="backgroundColor" red="0.20230334997177124" green="0.59261626005172729" blue="0.85288041830062866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="EfT-u7-sGM"/>
                                         <constraint firstAttribute="height" constant="40" id="Ogo-pN-tvX"/>
-                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="mPI-xB-ekq"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="pxy-zO-VDk"/>
                                     </constraints>
                                     <state key="normal" title="立即注册">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -152,6 +149,7 @@
                                 <constraint firstAttribute="trailing" secondItem="db5-bT-apC" secondAttribute="trailing" constant="10" id="02W-Ua-hSd"/>
                                 <constraint firstItem="O8f-aY-rBP" firstAttribute="top" secondItem="olv-v8-mNp" secondAttribute="bottom" constant="69" id="1ES-qV-gLB"/>
                                 <constraint firstItem="y2V-Dh-0cG" firstAttribute="top" secondItem="O8f-aY-rBP" secondAttribute="bottom" constant="6" id="7xB-Xj-olZ"/>
+                                <constraint firstItem="Czy-Uq-rux" firstAttribute="centerY" secondItem="IHz-cO-2nq" secondAttribute="centerY" id="7y9-qR-NJx"/>
                                 <constraint firstItem="ij3-cW-nkl" firstAttribute="top" secondItem="bln-MM-Ohy" secondAttribute="top" constant="187" id="8fU-eT-45k"/>
                                 <constraint firstItem="ij3-cW-nkl" firstAttribute="leading" secondItem="bln-MM-Ohy" secondAttribute="leading" constant="10" id="Dos-z0-Qj2"/>
                                 <constraint firstItem="y2V-Dh-0cG" firstAttribute="leading" secondItem="bln-MM-Ohy" secondAttribute="leading" constant="10" id="Dz6-ub-tea"/>
@@ -164,12 +162,11 @@
                                 <constraint firstItem="O8f-aY-rBP" firstAttribute="leading" secondItem="ij3-cW-nkl" secondAttribute="trailing" constant="8" id="S4s-Fc-X5P"/>
                                 <constraint firstItem="nEQ-x8-xQC" firstAttribute="leading" secondItem="bln-MM-Ohy" secondAttribute="leading" constant="35" id="Vls-AD-Qhg"/>
                                 <constraint firstItem="OVN-T8-Fuy" firstAttribute="top" secondItem="db5-bT-apC" secondAttribute="bottom" constant="10" id="Yv4-cL-sGa"/>
-                                <constraint firstAttribute="trailing" secondItem="Czy-Uq-rux" secondAttribute="trailing" constant="10" id="ZJl-dx-7XM"/>
+                                <constraint firstAttribute="trailing" secondItem="Czy-Uq-rux" secondAttribute="trailing" constant="20" id="ZJl-dx-7XM"/>
                                 <constraint firstAttribute="trailing" secondItem="gvX-SA-mW4" secondAttribute="trailing" constant="10" id="ZrV-J2-ZBa"/>
                                 <constraint firstAttribute="trailing" secondItem="y2V-Dh-0cG" secondAttribute="trailing" constant="10" id="b8V-4F-SOf"/>
                                 <constraint firstAttribute="trailing" secondItem="O8f-aY-rBP" secondAttribute="trailing" constant="8" id="bJ0-xg-bXy"/>
                                 <constraint firstItem="zrx-Xu-I9J" firstAttribute="top" secondItem="gvX-SA-mW4" secondAttribute="bottom" constant="35" id="e1U-tX-3Vj"/>
-                                <constraint firstItem="Czy-Uq-rux" firstAttribute="top" secondItem="y2V-Dh-0cG" secondAttribute="bottom" constant="16.5" id="fQh-il-omE"/>
                                 <constraint firstItem="nEQ-x8-xQC" firstAttribute="width" secondItem="gvX-SA-mW4" secondAttribute="width" multiplier="1:3" id="j93-Ue-w9L"/>
                                 <constraint firstItem="0gB-xD-R82" firstAttribute="leading" secondItem="bln-MM-Ohy" secondAttribute="leading" constant="10" id="mVG-E3-Pvk"/>
                                 <constraint firstAttribute="trailing" secondItem="zrx-Xu-I9J" secondAttribute="trailing" constant="35" id="n8a-ff-gIF"/>
@@ -218,6 +215,6 @@
     <resources>
         <image name="logo" width="276" height="313"/>
         <image name="visible" width="57" height="31"/>
-        <image name="微信登录" width="52" height="43"/>
+        <image name="微信登录1" width="33" height="27"/>
     </resources>
 </document>

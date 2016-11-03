@@ -279,7 +279,8 @@
     NSArray *titlrArray = @[model.icon1,model.icon2,model.icon3,model.icon4,model.icon5,model.icon6,model.icon7,model.icon8,model.icon9,model.icon10];
       NSArray *imageArray = @[model.icon1Img,model.icon2Img,model.icon3Img,model.icon4Img,model.icon5Img,model.icon6Img,model.icon7Img,model.icon8Img,model.icon9Img,model.icon10Img];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    CGFloat height = (_midView.frame.size.height - 20) / 2 < (_midView.frame.size.width - 60) / 5 ? (_midView.frame.size.height - 20) / 2 : (_midView.frame.size.width - 60) / 5;
+//    CGFloat height = (_midView.frame.size.height - 20) / 2 < (_midView.frame.size.width - 60) / 5 ? (_midView.frame.size.height - 20) / 2 : (_midView.frame.size.width - 60) / 5;
+    CGFloat height = (_midView.frame.size.height - 30) / 2 < (_midView.frame.size.width - 100) / 5 ? (_midView.frame.size.height - 30) / 2 : (_midView.frame.size.width - 100) / 5;
     layout.itemSize = CGSizeMake(height, height);
     layout.minimumLineSpacing = 10.0; // 竖
     layout.minimumInteritemSpacing = 10.0; // 横
@@ -346,12 +347,18 @@
     self.tableview.delegate = nil;
 }
 - (void)startLoc {
-#if 0
+#if 1
     // 实例化定位管理器 并申请定位功能
-    _locationManager = [[CLLocationManager alloc] init];
-    // 如果没有授权则请求用户授权
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
-        [_locationManager requestWhenInUseAuthorization];
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    /** 由于IOS8中定位的授权机制改变 需要进行手动授权
+     * 获取授权认证，两个方法：
+     * [self.locationManager requestWhenInUseAuthorization];
+     * [self.locationManager requestAlwaysAuthorization];
+     */
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        NSLog(@"requestWhenInUseAuthorization");
+        [self.locationManager requestAlwaysAuthorization];
     }
 #endif
     //初始化BMKLocationService
