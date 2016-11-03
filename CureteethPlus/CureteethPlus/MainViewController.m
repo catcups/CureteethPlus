@@ -22,7 +22,6 @@
 //static CGFloat kdefaultlat = 
 @interface MainViewController ()<BMKLocationServiceDelegate,UIAlertViewDelegate, UICollectionViewDelegate, BMKGeoCodeSearchDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) IconModel *iconModel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableviewHeight;
 @property (nonatomic, assign) NSInteger index1;
 @property (nonatomic, assign) NSInteger start;
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -39,7 +38,6 @@
 - (SearchPlaceHolderTextView *)searChTextfield {
     if (!_searChTextfield) {
         _searChTextfield = [[SearchPlaceHolderTextView alloc] initWithFrame:CGRectMake(0, 0, ScrMain_Width, 40) imageFrame:CGRectMake(5, 5, 20, 20)];
-        
         _searChTextfield.delegate = self;
         _searChTextfield.idelegate = self;
         [_searChTextfield setPlaceholder:@"请输入诊所或牙医名称"];
@@ -138,11 +136,6 @@
             [self.navigationController pushViewController:mid1VC animated:YES];
         };
         [ws.dennyScrollview getDennyImageArray:responseObject[@"bannerImageArray"]];
-        [ws.tableview reloadData];
-        ws.tableview.frame = CGRectMake(0, 40 + 130 + 150 + 60, CGRectGetWidth(self.view.frame),110 * ws.ClinincModelArray.count);
-        self.tableviewHeight.constant = self.ClinincModelArray.count * 110 + 49;
-        self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame),49 + 395 +110 * self.ClinincModelArray.count);
-        NSLog(@"请求成功~~~");
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [SVProgressHUD dismiss];
     }];
@@ -163,9 +156,8 @@
         [SVProgressHUD dismiss];
         ws.ClinincModelArray = [NSMutableArray arrayWithArray:responseObject[@"clinincArray"]];
         [ws.tableview reloadData];
-        ws.tableview.frame = CGRectMake(0, 40 + 130 + 150 + 60, CGRectGetWidth(self.view.frame),110 * ws.ClinincModelArray.count);
-        self.tableviewHeight.constant = self.ClinincModelArray.count * 110 + 49;
-        self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame),49 + 395 +110 * self.ClinincModelArray.count);
+        ws.tableview.frame = CGRectMake(0, CGRectGetMaxY(_midView1.frame), CGRectGetWidth(self.view.frame), 110 * ws.ClinincModelArray.count);
+        self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetMaxY(_midView1.frame) +110 * self.ClinincModelArray.count + 49);
         NSLog(@"请求成功~~~");
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [SVProgressHUD dismiss];
@@ -183,9 +175,8 @@
         self.start ++;
         [ws.ClinincModelArray addObjectsFromArray:responseObject[@"clinincArray"]];
         [ws.tableview reloadData];
-        ws.tableview.frame = CGRectMake(0, 395, CGRectGetWidth(self.view.frame),110 * ws.ClinincModelArray.count);
-        self.tableviewHeight.constant = self.ClinincModelArray.count * 110+ 49;
-        self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), 49 + 395 +110 * self.ClinincModelArray.count);
+        ws.tableview.frame = CGRectMake(0, CGRectGetMaxY(_midView1.frame), CGRectGetWidth(self.view.frame), 110 * ws.ClinincModelArray.count);
+        self.scrollview.contentSize = CGSizeMake(CGRectGetWidth(self.view.frame), CGRectGetMaxY(_midView1.frame) +110 * self.ClinincModelArray.count + 49);
         [self.scrollview.mj_footer endRefreshing];
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [self.scrollview.mj_footer endRefreshing];
