@@ -94,10 +94,10 @@
         [SVProgressHUD showErrorWithStatus:@"手机号不能为空!"];
         return;
     }
-//    if (![StringUtils isMobilePhone:self.mobileTextField.text]) {
-//        [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
-//        return;
-//    }
+    if (![StringUtils isMobilePhone:self.mobileTextField.text]) {
+        [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
+        return;
+    }
     self.getValidTimer = [self startTimerWithSEL:@selector(setValidCodeBtn:) Repeat:YES Dur:1];
     self.codeButton.tag = 60;
     [self.codeButton setEnabled:NO];

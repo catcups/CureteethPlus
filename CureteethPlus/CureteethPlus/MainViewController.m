@@ -398,7 +398,6 @@
         [self.titleButton setTitle:result.address forState:UIControlStateNormal];
         [CommonTool storeUserDefaults:result.address ForKey:KAddress];
         [CommonTool storeUserDefaults:result.address ForKey:KCity];
-
     } else {
         NSLog(@"未找到结果");
     }

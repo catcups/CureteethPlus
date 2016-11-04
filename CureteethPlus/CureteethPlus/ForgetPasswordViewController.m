@@ -28,7 +28,7 @@
 }
 - (UIButton *)codeButton {
     if (!_codeButton) {
-        _codeButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 100, _codeText.frame.origin.y- 5, 80, 40)];
+        _codeButton = [[UIButton alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 120, _codeText.frame.origin.y- 5, 80, 40)];
         [_codeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
         [_codeButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         [_codeButton addTarget:self action:@selector(sendCode:) forControlEvents:UIControlEventTouchUpInside];
@@ -79,10 +79,10 @@
         [SVProgressHUD showErrorWithStatus:@"手机号不能为空!"];
         return;
     }
-//    if (![StringUtils isMobilePhone:self.mobileText.text]) {
-//        [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
-//        return;
-//    }
+    if (![StringUtils isMobilePhone:self.mobileText.text]) {
+        [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
+        return;
+    }
     self.getValidTimer = [self startTimerWithSEL:@selector(setValidCodeBtn:) Repeat:YES Dur:1];
     self.codeButton.tag = 60;
     [self.codeButton setEnabled:NO];

@@ -45,6 +45,9 @@
 
 -(id)processResponse:(id)object {
     if (object[@"data"]) {
+//        if (!self.clinicId) {
+//            return [[AskModel alloc] initWithDic:object[@"data"][0]];
+//        }
         return  [[AskModel alloc]initWithDic:object[@"data"]];
     }else {
         return nil;

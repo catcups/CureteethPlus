@@ -180,10 +180,10 @@
         [SVProgressHUD showErrorWithStatus:@"手机号不能为空!"];
         return;
     }
-//    if (![StringUtils isMobilePhone:self.unMobileText.text]) {
-//        [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
-//        return;
-//    }
+    if (![StringUtils isMobilePhone:self.unMobileText.text]) {
+        [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
+        return;
+    }
     self.getValidTimer = [self startTimerWithSEL:@selector(setValidCodeBtn:) Repeat:YES Dur:1];
     self.codeButton.tag = 60;
     [self.codeButton setEnabled:NO];
@@ -220,10 +220,10 @@
             [SVProgressHUD showErrorWithStatus:@"请输入您的手机号码!"];
             return NO;
         }
-//        if (![StringUtils isMobilePhone:self.mobileTfd.text]) {
-//            [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
-//            return NO;
-//        }
+        if (![StringUtils isMobilePhone:self.mobileTfd.text]) {
+            [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
+            return NO;
+        }
         if (self.nameTfd.text.length == 0) {
             [SVProgressHUD showErrorWithStatus:@"请输入您的姓名!"];
             return NO;

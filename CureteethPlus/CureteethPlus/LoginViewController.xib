@@ -123,7 +123,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                    <state key="normal" title="微信登录" image="微信登录1">
+                                    <state key="normal" title="微信登录" image="微信登录">
                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
@@ -215,6 +215,6 @@
     <resources>
         <image name="logo" width="276" height="313"/>
         <image name="visible" width="57" height="31"/>
-        <image name="微信登录1" width="33" height="27"/>
+        <image name="微信登录" width="33" height="27"/>
     </resources>
 </document>

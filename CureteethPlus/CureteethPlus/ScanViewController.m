@@ -20,7 +20,7 @@
 @property (nonatomic, strong)ScanResultView *resultView;
 @end
 @implementation ScanViewController;
-
+//@dynamic view;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"扫描页";

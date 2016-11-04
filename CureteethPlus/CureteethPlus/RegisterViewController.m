@@ -14,7 +14,6 @@
 @property (nonatomic,strong) NSTimer *getValidTimer;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 
-
 @end
 
 @implementation RegisterViewController
@@ -36,7 +35,6 @@
     [self.scrollview addSubview:self.codeButton];
     self.submitButton.layer.cornerRadius = 5;
     self.navigationController.navigationBarHidden = NO;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,16 +47,15 @@
 - (IBAction)see2:(id)sender {
     self.passwold1.secureTextEntry = !self.passwold1.secureTextEntry ;
 }
-
 - (void)sendCode:(UIButton *)sender {
     if (self.mobileTextField.text.length == 0) {
         [SVProgressHUD showErrorWithStatus:@"手机号不能为空!"];
         return;
     }
-//    if (![StringUtils isMobilePhone:self.mobileTextField.text]) {
-//        [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
-//        return;
-//    }
+    if (![StringUtils isMobilePhone:self.mobileTextField.text]) {
+        [SVProgressHUD showErrorWithStatus:@"手机号格式不对!"];
+        return;
+    }
     self.getValidTimer = [self startTimerWithSEL:@selector(setValidCodeBtn:) Repeat:YES Dur:1];
     self.codeButton.tag = 60;
     [self.codeButton setEnabled:NO];

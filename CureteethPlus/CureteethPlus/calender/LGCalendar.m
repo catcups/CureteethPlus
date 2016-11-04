@@ -8,7 +8,6 @@
 
 #import "LGCalendar.h"
 #import "LGCalendarCell.h"
-#import "LGCalendarHeadView.h"
 #import "NSDate+calender.h"
 #import "UIVew+LGExtension.h"
 #import "LGCalendarHeadView.h"
@@ -26,9 +25,9 @@
 @property (weak  , nonatomic) CALayer                    *bottomBorderLayer;
 @property (weak  , nonatomic) UICollectionView           *collectionView;
 @property (weak  , nonatomic) UICollectionViewFlowLayout *collectionViewFlowLayout;
-@property (weak  , nonatomic) LGCalendarHeadView           *header;
 @property(nonatomic,assign)NSInteger currentDayIndex;
 @property(nonatomic,assign)NSInteger currentDayOffset;
+@property (weak  , nonatomic) LGCalendarHeadView           *header;
 
 @property (strong, nonatomic) NSDate                     *minimumDate;
 @property (strong, nonatomic) NSDate                     *maximumDate;
